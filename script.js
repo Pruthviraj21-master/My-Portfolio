@@ -6,6 +6,7 @@ if (menuToggle && mobilePanel) {
   menuToggle.addEventListener("click", () => {
     open = !open;
     mobilePanel.style.display = open ? "flex" : "none";
+    menuToggle.setAttribute("aria-expanded", String(open));
   });
 }
 
