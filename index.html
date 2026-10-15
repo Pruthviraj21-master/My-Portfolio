@@ -6,384 +6,1432 @@
     <title>Pruthviraj Chavan | Student Founder & Full-Stack Developer</title>
     <meta
       name="description"
-      content="Pruthviraj Chavan — final-year MCA student in Pune, building CreatorsBridge and WashAtComfort. Full-stack developer and student founder."
+      content="I build real products end to end. Explore CreatorsBridge, WashAtComfort, and the journey of Pruthviraj Chavan, student founder and full-stack developer in Pune."
     />
+    <meta
+      property="og:title"
+      content="Pruthviraj Chavan · Building things that matter"
+    />
+    <meta
+      property="og:description"
+      content="Student founder. Full-stack developer. Two live products, built solo. See my work and get in touch."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script>
+      /* intro ceremony: plays once per session, skipped for reduced motion */
+      (function () {
+        var d = document.documentElement;
+        var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var seen = false;
+        try { seen = sessionStorage.getItem('pdc-intro') === '1'; } catch (e) {}
+        if (!rm && !seen) {
+          d.classList.add('intro-play');
+          try { sessionStorage.setItem('pdc-intro', '1'); } catch (e) {}
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .hero {
-        --mx: 20%;
-        --my: 30%;
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
-        background: radial-gradient(
-          400px circle at var(--mx) var(--my),
-          rgba(255, 122, 69, 0.1),
-          transparent 70%
-        );
-        transition: background 0.1s ease;
-      }
-      .hero .wrap {
-        position: relative;
-        z-index: 1;
-      }
-      .dot-grid {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        opacity: 0.5;
-        background-image: radial-gradient(
-          circle,
-          var(--border) 1px,
-          transparent 1px
-        );
-        background-size: 26px 26px;
-        mask-image: linear-gradient(to bottom, black, transparent 85%);
-      }
-    </style>
   </head>
   <body>
-    <header>
-      <div class="wrap nav-row">
-        <a href="index.html" class="brand">
-          <span class="brand-mark">P</span>
-          <span>Pruthviraj</span>
-        </a>
-        <nav class="links">
-          <a href="index.html" data-page="index.html">Home</a>
-          <a href="projects.html" data-page="projects.html">Projects</a>
-          <a href="courses.html" data-page="courses.html">Courses</a>
-          <a href="contact.html" data-page="contact.html">Contact</a>
-        </nav>
-        <div class="nav-actions">
-          <a
-            class="icon-btn hide-mobile"
-            href="https://github.com/pruthviraj21-master"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-              <path
-                d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
-              />
-            </svg>
-          </a>
-          <a
-            class="btn btn-outline btn-sm hide-mobile"
-            href="ZuigoResume.docx"
-            target="_blank"
-            >Resume</a
-          >
-          <button
-            id="menuToggle"
-            class="icon-btn hide-desktop"
-            aria-label="Menu"
-            aria-expanded="false"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            >
-              <line x1="4" x2="20" y1="7" y2="7" />
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="17" y2="17" />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        id="mobilePanel"
-        class="mobile-panel hide-desktop"
-        style="display: none"
-      >
-        <a href="index.html" data-page="index.html">Home</a>
-        <a href="projects.html" data-page="projects.html">Projects</a>
-        <a href="courses.html" data-page="courses.html">Courses</a>
-        <a href="contact.html" data-page="contact.html">Contact</a>
-        <a href="ZuigoResume.docx" target="_blank">Resume</a>
-      </div>
-    </header>
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="progress-bar" aria-hidden="true"></div>
+    <div class="cursor-label" aria-hidden="true"></div>
+    <!-- reusable SVG icons -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol
+          id="i-arrow-ur"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </symbol>
+        <symbol
+          id="i-arrow-r"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </symbol>
+        <symbol
+          id="i-arrow-d"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 5v14" />
+          <path d="m19 12-7 7-7-7" />
+        </symbol>
+        <symbol
+          id="i-download"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" x2="12" y1="15" y2="3" />
+        </symbol>
+        <symbol
+          id="i-menu"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <line x1="4" x2="20" y1="6" y2="6" />
+          <line x1="4" x2="20" y1="12" y2="12" />
+          <line x1="4" x2="20" y1="18" y2="18" />
+        </symbol>
+        <symbol
+          id="i-x"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </symbol>
+        <symbol
+          id="i-map-pin"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+          />
+          <circle cx="12" cy="10" r="3" />
+        </symbol>
+        <symbol
+          id="i-rocket"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"
+          />
+          <path
+            d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"
+          />
+          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+        </symbol>
+        <symbol
+          id="i-code"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m18 16 4-4-4-4" />
+          <path d="m6 8-4 4 4 4" />
+          <path d="m14.5 4-5 16" />
+        </symbol>
+        <symbol
+          id="i-terminal"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="4 17 10 11 4 5" />
+          <line x1="12" x2="20" y1="19" y2="19" />
+        </symbol>
+        <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
+          />
+        </symbol>
+        <symbol
+          id="i-check"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M20 6 9 17l-5-5" />
+        </symbol>
+        <symbol
+          id="i-grad-cap"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+          />
+          <path d="M22 10v6" />
+          <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+        </symbol>
+        <symbol
+          id="i-mail"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="20" height="16" x="2" y="4" rx="2" />
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+        </symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+          />
+          <rect width="4" height="12" x="2" y="9" />
+          <circle cx="4" cy="4" r="2" />
+        </symbol>
+        <symbol
+          id="i-instagram"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+        </symbol>
+        <symbol
+          id="i-message"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+        </symbol>
+        <symbol
+          id="i-car"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"
+          />
+          <circle cx="7" cy="17" r="2" />
+          <path d="M9 17h6" />
+          <circle cx="17" cy="17" r="2" />
+        </symbol>
+        <symbol
+          id="i-users"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </symbol>
+        <symbol
+          id="i-briefcase"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+          <rect width="20" height="14" x="2" y="6" rx="2" />
+        </symbol>
+        <symbol
+          id="i-sparkles"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+          />
+          <path d="M20 3v4" />
+          <path d="M22 5h-4" />
+          <path d="M4 17v2" />
+          <path d="M5 18H3" />
+        </symbol>
+        <symbol
+          id="i-file-text"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+          />
+          <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+          <path d="M10 9H8" />
+          <path d="M16 13H8" />
+          <path d="M16 17H8" />
+        </symbol>
+        <symbol
+          id="i-play"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polygon points="6 3 20 12 6 21 6 3" />
+        </symbol>
+        <symbol
+          id="i-send"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
+          />
+          <path d="m21.854 2.147-10.94 10.939" />
+        </symbol>
+        <symbol
+          id="i-braces"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+          />
+          <path
+            d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+          />
+        </symbol>
+        <symbol
+          id="i-database"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <ellipse cx="12" cy="5" rx="9" ry="3" />
+          <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+          <path d="M3 12A9 3 0 0 0 21 12" />
+        </symbol>
+        <symbol
+          id="i-wrench"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+          />
+        </symbol>
+        <symbol
+          id="i-panels"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="18" height="18" x="3" y="3" rx="2" />
+          <path d="M3 9h18" />
+          <path d="M9 21V9" />
+        </symbol>
+      </defs>
+    </svg>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero">
-      <div class="dot-grid"></div>
-      <div class="wrap hero-grid">
-        <div>
-          <span class="kicker">AVAILABLE FOR OPPORTUNITIES</span>
-          <h1>Pruthviraj Chavan</h1>
-          <div
-            class="role-line mono"
-            id="roleLine"
-            data-roles='["Full-Stack Developer","Student Founder","MERN Stack Builder","Problem Solver"]'
-          >
-            <span class="role-text"></span><span class="cursor">&nbsp;</span>
-          </div>
-          <p class="sub">
-            Final-year MCA student in Pune, building real products end-to-end
-            <!-- TODO: adjust this line to sound like you -->
-            from writing the code to shipping it, documenting the process
-            publicly, and figuring out the business side along the way.
-          </p>
-          <div class="hero-ctas">
-            <a href="projects.html" class="btn btn-primary">View Projects</a>
-            <a href="contact.html" class="btn btn-outline">Get in Touch</a>
-          </div>
-          <div class="social-row">
+    <div class="portfolio">
+      <div class="page-texture"></div>
+      <div class="cursor-dot" id="cursorDot"></div>
+      <div class="cursor-ring" id="cursorRing"></div>
+
+      <!-- ================= NAV ================= -->
+      <header class="site-nav" id="siteNav">
+        <div class="container-main nav-inner">
+          <a href="#home" class="brand" aria-label="Pruthviraj Chavan home">
+            <div class="monogram">P<span>C</span></div>
+            <span>pruthviraj<span class="text-primary">.</span></span>
+          </a>
+          <div class="nav-actions">
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+              <a class="nav-link active" href="#home">Home</a>
+              <a class="nav-link" href="#projects">Projects</a>
+              <a class="nav-link" href="#skills">Skills</a>
+              <a class="nav-link" href="#experience">Experience</a>
+              <a class="nav-link" href="#contact">Contact</a>
+            </nav>
             <a
-              class="social-btn"
+              class="portfolio-button portfolio-button-glass resume-button"
+              href="ZuigoResume.docx"
+              download
+              title="Download resume (Word document)"
+            >
+              <svg><use href="#i-download" /></svg>Resume
+            </a>
+            <button
+              class="menu-toggle"
+              id="menuToggle"
+              aria-label="Open navigation"
+              aria-expanded="false"
+              aria-controls="navLinks"
+            >
+              <svg id="menuIcon"><use href="#i-menu" /></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <!-- ================= HERO ================= -->
+        <section id="home" class="hero">
+          <div class="container-main hero-grid">
+            <div class="hero-copy">
+              <div class="available">
+                <span class="live-dot"></span>Available for opportunities
+              </div>
+              <p class="hero-intro">HEY THERE, I&rsquo;M</p>
+              <h1>Pruthviraj<br /><span>Chavan.</span></h1>
+              <p class="hero-subtitle">
+                Student Founder &amp; Full-Stack Developer
+              </p>
+              <p class="hero-description">
+                I
+                <span class="cycling-word" id="cyclingWord"
+                  >build<span class="type-caret">|</span></span
+                >
+                real products end to end, from writing the code to shipping
+                it, and document every step publicly.
+              </p>
+              <p class="location">
+                <svg><use href="#i-map-pin" /></svg>Pune, Maharashtra, India
+              </p>
+              <div class="hero-ctas">
+                <a
+                  class="portfolio-button portfolio-button-primary"
+                  href="#projects"
+                  >View Projects<svg><use href="#i-arrow-ur" /></svg
+                ></a>
+                <a
+                  class="portfolio-button portfolio-button-glass"
+                  href="#contact"
+                  >Get in Touch<svg><use href="#i-arrow-r" /></svg
+                ></a>
+              </div>
+              <div class="hero-socials socials">
+                <a
+                  class="portfolio-social"
+                  href="https://github.com/pruthviraj21-master"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  title="GitHub"
+                  ><svg><use href="#i-github" /></svg
+                ></a>
+                <a
+                  class="portfolio-social"
+                  href="https://www.linkedin.com/in/pruthviraj-chavan-294342310/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                  ><svg><use href="#i-linkedin" /></svg
+                ></a>
+                <a
+                  class="portfolio-social"
+                  href="https://www.instagram.com/solofounder_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  title="Instagram"
+                  ><svg><use href="#i-instagram" /></svg
+                ></a>
+                <a
+                  class="portfolio-social"
+                  href="https://x.com/Pruthviraj74"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X"
+                  title="X"
+                  ><span class="font-mono" style="font-size: 13px"
+                    >&#120143;</span
+                  ></a
+                >
+                <span class="social-divider"></span>
+                <span class="social-caption">LET&rsquo;S CONNECT</span>
+              </div>
+            </div>
+            <div class="portrait-scene">
+              <div class="portrait-frame">
+                <img
+                  src="InstagramProfileImage.png"
+                  alt="Pruthviraj Chavan"
+                  width="768"
+                  height="768"
+                  fetchpriority="high"
+                />
+                <span class="portrait-label">DEVELOPER. FOUNDER. BUILDER.</span>
+              </div>
+              <div class="floating-card stat-products">
+                <svg><use href="#i-rocket" /></svg>
+                <div>2 live products<small>Ideas → shipped.</small></div>
+              </div>
+              <div class="floating-card stat-mern">
+                <svg><use href="#i-code" /></svg>
+                <div>MERN stack<small>Full-stack, end to end.</small></div>
+              </div>
+              <div class="floating-card stat-building">
+                <svg><use href="#i-terminal" /></svg>
+                <div>
+                  Building in public<small
+                    >The process. Not just the polish.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#about" class="hero-bottom"
+            ><svg><use href="#i-arrow-d" /></svg>SCROLL TO EXPLORE</a
+          >
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="section about-section">
+          <div class="container-main about-grid reveal">
+            <div>
+              <p class="section-eyebrow">A LITTLE ABOUT ME</p>
+              <h2>Less theory. More shipping.</h2>
+              <p class="about-copy">
+                I&rsquo;m a final-year MCA student who ended up
+                <strong>building products, not just studying them.</strong> I
+                taught myself the MERN stack, shipped CreatorsBridge as a live
+                marketplace, and built WashAtComfort from a problem I lived
+                personally: years of washing cars myself.<br /><br />I care
+                about actually shipping things, documenting honestly (bugs
+                included), and figuring out the business side alongside the
+                code.
+              </p>
+            </div>
+            <div class="stats-grid">
+              <div class="glass stat-box">
+                <div class="stat-number">
+                  <span class="count" data-value="8">8</span><span>weeks</span>
+                </div>
+                <p>to ship CreatorsBridge</p>
+              </div>
+              <div class="glass stat-box">
+                <div class="stat-number">
+                  <span class="count" data-value="2">2</span><span></span>
+                </div>
+                <p>Live products</p>
+              </div>
+              <div class="glass stat-box">
+                <div class="stat-number">
+                  <span class="count" data-value="4">4</span><span></span>
+                </div>
+                <p>Industry certifications</p>
+              </div>
+              <div class="glass stat-box">
+                <div class="stat-number">
+                  <span class="count" data-value="100">100</span><span>%</span>
+                </div>
+                <p>Solo built</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section id="projects" class="section">
+          <div class="container-main reveal">
+            <div class="section-heading">
+              <div class="min-w-0">
+                <p class="section-eyebrow">SELECTED WORK</p>
+                <h2>Things I actually shipped</h2>
+              </div>
+              <p>Real problems. Real products. Out in the world.</p>
+            </div>
+            <div class="projects-grid">
+              <!-- CreatorsBridge -->
+              <article class="glass project-card">
+                <div
+                  class="project-preview creators"
+                  aria-label="CreatorsBridge project illustration"
+                >
+                  <div class="browser-mock">
+                    <div class="browser-bar">
+                      <i></i><i></i><i></i
+                      ><span>creator-bridge-pearl.vercel.app</span>
+                    </div>
+                    <div class="mock-nav">
+                      <div class="mock-brand">Creators<span>Bridge.</span></div>
+                      <small>Discover　 For creators　 For businesses</small>
+                    </div>
+                    <div class="mock-main">
+                      <h4>Local talent.<br /><span>Real connections.</span></h4>
+                      <p>
+                        Where local creators and ambitious businesses grow
+                        together.
+                      </p>
+                      <span class="mock-cta"
+                        >Find your next collaboration ↗</span
+                      >
+                      <div class="mock-tiles">
+                        <div class="mock-tile">
+                          <svg><use href="#i-users" /></svg>
+                          <div>Discover creators</div>
+                        </div>
+                        <div class="mock-tile">
+                          <svg><use href="#i-briefcase" /></svg>
+                          <div>Find campaigns</div>
+                        </div>
+                        <div class="mock-tile">
+                          <svg><use href="#i-sparkles" /></svg>
+                          <div>Grow together</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-body">
+                  <div class="project-top">
+                    <h3>CreatorsBridge</h3>
+                    <span class="live-badge"
+                      ><span class="live-dot"></span>Live</span
+                    >
+                  </div>
+                  <p class="project-description">
+                    A marketplace connecting local creators with local
+                    businesses for paid collaborations.
+                  </p>
+                  <div class="tags">
+                    <span class="tag">React</span
+                    ><span class="tag">Node.js</span
+                    ><span class="tag">MongoDB</span
+                    ><span class="tag">Express</span><span class="tag">JWT</span
+                    ><span class="tag">Vercel</span
+                    ><span class="tag">Render</span>
+                  </div>
+                  <ul class="project-features">
+                    <li>
+                      <svg><use href="#i-check" /></svg>City-based campaign
+                      discovery
+                    </li>
+                    <li>
+                      <svg><use href="#i-check" /></svg>Privacy-first offers,
+                      contact hidden until accepted
+                    </li>
+                    <li>
+                      <svg><use href="#i-check" /></svg>AI offer message
+                      generator with Hugging Face
+                    </li>
+                  </ul>
+                  <div class="project-links">
+                    <a
+                      class="portfolio-button portfolio-button-primary"
+                      href="https://creator-bridge-pearl.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live Site<svg><use href="#i-arrow-ur" /></svg
+                    ></a>
+                    <a
+                      class="portfolio-button portfolio-button-glass"
+                      href="https://github.com/Pruthviraj21-master/CreatorBridge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ><svg><use href="#i-github" /></svg>GitHub<svg>
+                        <use href="#i-arrow-ur" /></svg
+                    ></a>
+                    <a
+                      class="portfolio-button portfolio-button-glass"
+                      href="https://www.linkedin.com/in/pruthviraj-chavan-294342310/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ><svg><use href="#i-linkedin" /></svg>LinkedIn<svg>
+                        <use href="#i-arrow-ur" /></svg
+                    ></a>
+                  </div>
+                </div>
+              </article>
+              <!-- WashAtComfort -->
+              <article class="glass project-card">
+                <div
+                  class="project-preview wash"
+                  aria-label="WashAtComfort project illustration"
+                >
+                  <div class="browser-mock">
+                    <div class="browser-bar">
+                      <i></i><i></i><i></i><span>washatcomfort.com</span>
+                    </div>
+                    <div class="mock-nav">
+                      <div class="mock-brand">Wash<span>AtComfort.</span></div>
+                      <small>Our services　 How it works　 Contact</small>
+                    </div>
+                    <div class="mock-main">
+                      <h4>
+                        Your car. Our care.<br /><span>At your doorstep.</span>
+                      </h4>
+                      <p>A clean car without leaving your home.</p>
+                      <span class="mock-cta">Book your car wash ↗</span>
+                      <div class="mock-tiles">
+                        <div class="mock-tile">
+                          <svg><use href="#i-car" /></svg>
+                          <div>Doorstep service</div>
+                        </div>
+                        <div class="mock-tile">
+                          <svg><use href="#i-sparkles" /></svg>
+                          <div>Quality care</div>
+                        </div>
+                        <div class="mock-tile">
+                          <svg><use href="#i-briefcase" /></svg>
+                          <div>Easy booking</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-body">
+                  <div class="project-top">
+                    <h3>WashAtComfort</h3>
+                    <span class="live-badge"
+                      ><span class="live-dot"></span>Live</span
+                    >
+                  </div>
+                  <p class="project-description">
+                    A doorstep car-wash booking platform built from a problem I
+                    lived personally.
+                  </p>
+                  <div class="tags">
+                    <span class="tag">HTML</span><span class="tag">CSS</span
+                    ><span class="tag">JavaScript</span
+                    ><span class="tag">Google Sheets</span
+                    ><span class="tag">Cloudinary</span
+                    ><span class="tag">WhatsApp API</span>
+                  </div>
+                  <ul class="project-features">
+                    <li>
+                      <svg><use href="#i-check" /></svg>Doorstep booking via a
+                      simple web form
+                    </li>
+                    <li>
+                      <svg><use href="#i-check" /></svg>Photo upload proof with
+                      Cloudinary
+                    </li>
+                    <li>
+                      <svg><use href="#i-check" /></svg>WhatsApp-based customer
+                      communication
+                    </li>
+                  </ul>
+                  <div class="project-links">
+                    <a
+                      class="portfolio-button portfolio-button-primary"
+                      href="https://pruthviraj21-master.github.io/WashAtComfort/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live Site<svg><use href="#i-arrow-ur" /></svg
+                    ></a>
+                    <a
+                      class="portfolio-button portfolio-button-glass"
+                      href="https://github.com/Pruthviraj21-master/WashAtComfort"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ><svg><use href="#i-github" /></svg>GitHub<svg>
+                        <use href="#i-arrow-ur" /></svg
+                    ></a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="github-banner">
+              <div class="github-banner-main">
+                <svg><use href="#i-github" /></svg>
+                <div>
+                  <h3>There&rsquo;s more behind the scenes.</h3>
+                  <p>
+                    Experiments, side projects, and all the code that makes it
+                    happen.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://github.com/pruthviraj21-master"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="More on GitHub"
+                >More on GitHub<svg><use href="#i-arrow-ur" /></svg
+              ></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section id="skills" class="section">
+          <div class="container-main reveal">
+            <div class="section-heading">
+              <div class="min-w-0">
+                <p class="section-eyebrow">MY TOOLKIT</p>
+                <h2>Tools I actually build with</h2>
+              </div>
+              <p>Picked by practice, not by trends.</p>
+            </div>
+            <div class="skills-grid">
+              <article class="glass skill-card">
+                <div class="skill-heading">
+                  <svg><use href="#i-code" /></svg>
+                  <h3>Languages</h3>
+                </div>
+                <div class="tags">
+                  <span class="tag">JavaScript</span
+                  ><span class="tag">Python</span><span class="tag">Java</span>
+                </div>
+              </article>
+              <article class="glass skill-card">
+                <div class="skill-heading">
+                  <svg><use href="#i-panels" /></svg>
+                  <h3>Frontend</h3>
+                </div>
+                <div class="tags">
+                  <span class="tag">React</span><span class="tag">Vite</span
+                  ><span class="tag">Tailwind CSS</span
+                  ><span class="tag">Framer Motion</span
+                  ><span class="tag">HTML/CSS</span>
+                </div>
+              </article>
+              <article class="glass skill-card">
+                <div class="skill-heading">
+                  <svg><use href="#i-braces" /></svg>
+                  <h3>Backend</h3>
+                </div>
+                <div class="tags">
+                  <span class="tag">Node.js</span
+                  ><span class="tag">Express.js</span
+                  ><span class="tag">Spring Boot</span
+                  ><span class="tag">JWT Auth</span>
+                </div>
+              </article>
+              <article class="glass skill-card">
+                <div class="skill-heading">
+                  <svg><use href="#i-database" /></svg>
+                  <h3>Databases</h3>
+                </div>
+                <div class="tags">
+                  <span class="tag">MongoDB</span
+                  ><span class="tag">PostgreSQL</span>
+                </div>
+              </article>
+              <article class="glass skill-card">
+                <div class="skill-heading">
+                  <svg><use href="#i-wrench" /></svg>
+                  <h3>Tools &amp; deployment</h3>
+                </div>
+                <div class="tags">
+                  <span class="tag">Git</span><span class="tag">GitHub</span
+                  ><span class="tag">Vercel</span><span class="tag">Render</span
+                  ><span class="tag">Google Apps Script</span
+                  ><span class="tag">Cloudinary</span
+                  ><span class="tag">Hugging Face API</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= EXPERIENCE ================= -->
+        <section id="experience" class="section">
+          <div class="container-main reveal">
+            <div class="section-heading">
+              <div class="min-w-0">
+                <p class="section-eyebrow">THE JOURNEY</p>
+                <h2>Where I&rsquo;ve applied this</h2>
+              </div>
+            </div>
+            <div class="journey-chat glass">
+              <div class="chat-bar">
+                <span class="monogram" aria-hidden="true">PDC</span>
+                <div class="min-w-0">
+                  <p class="chat-name">Pruthviraj Chavan</p>
+                  <p class="chat-role">ASK ME ABOUT THE WORK</p>
+                </div>
+                <span class="chat-online"><i aria-hidden="true"></i>ONLINE</span>
+              </div>
+              <div class="chat-thread" aria-live="polite">
+                <div class="msg ai">
+                  <div class="bubble">
+                    <p class="stream-text chat-greeting">Ask about my experience, or pick a question below. Every answer comes from real work.</p>
+                  </div>
+                </div>
+                <div class="exchange">
+                  <div class="msg user">
+                    <div class="bubble"><p>What did you build at ZuiGO?</p></div>
+                  </div>
+                  <div class="msg ai">
+                    <div class="bubble">
+                      <span class="thinking" aria-hidden="true"><i></i><i></i><i></i></span>
+                      <p class="stream-text">Six months as an AI Automation Intern at ZuiGO Private Limited.</p>
+                      <article class="experience-card">
+                        <div class="experience-top">
+                          <div class="min-w-0">
+                            <h3>AI Automation Intern</h3>
+                            <p>ZuiGO Private Limited</p>
+                          </div>
+                          <span class="duration">6 months</span>
+                        </div>
+                        <p class="experience-description">
+                          Built a Retrieval-Augmented Generation (RAG) chatbot using
+                          Node.js, Express, and the Gemini API, including a PDF
+                          ingestion pipeline and cosine-similarity search. Also ran
+                          product-thinking work: PRDs, user stories, and sprint tracking
+                          in Jira.
+                        </p>
+                        <div class="tags">
+                          <span class="tag">Node.js</span
+                          ><span class="tag">Gemini API</span
+                          ><span class="tag">RAG</span><span class="tag">Express</span>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+                <div class="exchange">
+                  <div class="msg user">
+                    <div class="bubble"><p>How was CreatorsBridge built?</p></div>
+                  </div>
+                  <div class="msg ai">
+                    <div class="bubble">
+                      <span class="thinking" aria-hidden="true"><i></i><i></i><i></i></span>
+                      <p class="stream-text">Ongoing. Founder and developer of CreatorsBridge, a full MERN marketplace.</p>
+                      <article class="experience-card">
+                        <div class="experience-top">
+                          <div class="min-w-0">
+                            <h3>Founder &amp; Developer</h3>
+                            <p>CreatorsBridge</p>
+                          </div>
+                          <span class="duration">Ongoing</span>
+                        </div>
+                        <p class="experience-description">
+                          Designed, built, and deployed a full MERN marketplace
+                          connecting local content creators with local businesses, end
+                          to end, from database schema to production deployment.
+                        </p>
+                        <div class="tags">
+                          <span class="tag">MERN</span
+                          ><span class="tag">MongoDB Atlas</span
+                          ><span class="tag">Vercel</span
+                          ><span class="tag">Render</span>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+                <div class="exchange">
+                  <div class="msg user">
+                    <div class="bubble"><p>What is WashAtComfort?</p></div>
+                  </div>
+                  <div class="msg ai">
+                    <div class="bubble">
+                      <span class="thinking" aria-hidden="true"><i></i><i></i><i></i></span>
+                      <p class="stream-text">Ongoing. Founder and developer of WashAtComfort, a doorstep car-wash platform.</p>
+                      <article class="experience-card">
+                        <div class="experience-top">
+                          <div class="min-w-0">
+                            <h3>Founder &amp; Developer</h3>
+                            <p>WashAtComfort</p>
+                          </div>
+                          <span class="duration">Ongoing</span>
+                        </div>
+                        <p class="experience-description">
+                          Built a doorstep car-wash booking platform from a problem
+                          I&rsquo;d lived myself. Handled the whole stack: frontend,
+                          Google Sheets as a lightweight backend, Cloudinary for photo
+                          uploads, and WhatsApp-based communication.
+                        </p>
+                        <div class="tags">
+                          <span class="tag">JavaScript</span
+                          ><span class="tag">Google Sheets</span
+                          ><span class="tag">Cloudinary</span>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-chips">
+                <button type="button" class="chip">What did you build at ZuiGO?</button>
+                <button type="button" class="chip">How was CreatorsBridge built?</button>
+                <button type="button" class="chip">What is WashAtComfort?</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= EDUCATION ================= -->
+        <section id="education" class="section">
+          <div class="container-main reveal">
+            <div class="section-heading">
+              <div class="min-w-0">
+                <p class="section-eyebrow">EDUCATION</p>
+                <h2>The foundation</h2>
+              </div>
+            </div>
+            <div class="education-grid">
+              <div class="education-item">
+                <svg><use href="#i-grad-cap" /></svg>
+                <div>
+                  <h3>Master of Computer Applications</h3>
+                  <p>
+                    IMCC (Institute of Management and Career Courses), Pune ·
+                    Savitribai Phule Pune University
+                  </p>
+                  <div class="tags">
+                    <span class="tag">2024–2026 · Final Year</span
+                    ><span class="tag">NAAC Grade A+</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-item">
+                <svg><use href="#i-grad-cap" /></svg>
+                <div>
+                  <h3>Bachelor of Computer Applications</h3>
+                  <p>A foundation in computer science. Completed in 2024</p>
+                  <div class="tags"><span class="tag">BCA · 2024</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= CERTIFICATES ================= -->
+        <section id="certificates" class="section">
+          <div class="container-main reveal">
+            <div class="section-heading">
+              <div class="min-w-0">
+                <p class="section-eyebrow">CERTIFICATES</p>
+                <h2>Courses &amp; certificates</h2>
+              </div>
+              <p>Completed courses, online and offline.</p>
+            </div>
+            <div class="cert-grid">
+              <a
+                class="glass cert-card"
+                href="angular-infosys.png"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="cert-thumb">
+                  <img
+                    src="angular-infosys.png"
+                    alt="Angular certificate from Infosys Springboard"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="cert-body">
+                  <h3>Angular</h3>
+                  <p class="cert-provider">
+                    Infosys Springboard · Sep 26, 2026
+                  </p>
+                  <p class="cert-note">
+                    Picked this up to work with Angular for service-based
+                    company interviews.
+                  </p>
+                  <span class="cert-type">ONLINE</span>
+                </div>
+              </a>
+              <a
+                class="glass cert-card"
+                href="playwright-testautomationu.png"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="cert-thumb">
+                  <img
+                    src="playwright-testautomationu.png"
+                    alt="Introduction to Playwright certificate from Test Automation University"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="cert-body">
+                  <h3>Introduction to Playwright</h3>
+                  <p class="cert-provider">
+                    Test Automation University · May 2026
+                  </p>
+                  <p class="cert-note">
+                    Completed an introductory Playwright course focused on
+                    automated web testing.
+                  </p>
+                  <span class="cert-type">ONLINE</span>
+                </div>
+              </a>
+              <a
+                class="glass cert-card"
+                href="aws-certification.png"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="cert-thumb">
+                  <img
+                    src="aws-certification.png"
+                    alt="AWS Training and Certification from Amazon Web Services"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="cert-body">
+                  <h3>AWS Training and Certification</h3>
+                  <p class="cert-provider">Amazon Web Services · Apr 2026</p>
+                  <p class="cert-note">
+                    Completed AWS training and certification to enhance cloud
+                    computing skills.
+                  </p>
+                  <span class="cert-type">ONLINE</span>
+                </div>
+              </a>
+              <a
+                class="glass cert-card"
+                href="MultiAIAgent.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="cert-thumb cert-thumb-pdf">
+                  <svg><use href="#i-file-text" /></svg>
+                </div>
+                <div class="cert-body">
+                  <h3>Multi AI Agent Systems</h3>
+                  <p class="cert-provider">DeepLearning.AI · Sep 29, 2026</p>
+                  <p class="cert-note">
+                    Completed a course on designing and implementing multi-agent
+                    systems using AI.
+                  </p>
+                  <span class="cert-type">ONLINE · PDF</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= VIDEOS ================= -->
+        <section id="videos" class="section">
+          <div class="container-main reveal">
+            <div class="videos-layout">
+              <div class="videos-intro">
+                <p class="section-eyebrow">LEARNING &amp; VIDEOS</p>
+                <h2>What I learn, I document</h2>
+                <p class="videos-copy">
+                  Walkthroughs from my build, plus standout talks on public
+                  speaking and building companies. More coming with the
+                  channel.
+                </p>
+              </div>
+              <div class="video-frame">
+                <div class="video-scroll">
+                <a
+                  class="glass video-card"
+                  href="https://youtu.be/lPWeEX5XEpk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="video-thumb">
+                    <img
+                      src="https://img.youtube.com/vi/lPWeEX5XEpk/maxresdefault.jpg"
+                      alt="CreatorsBridge walkthrough video thumbnail"
+                      loading="lazy"
+                      onerror="this.onerror=null;this.src='https://img.youtube.com/vi/lPWeEX5XEpk/hqdefault.jpg'"
+                    />
+                    <span class="play-btn"
+                      ><svg><use href="#i-play" /></svg
+                    ></span>
+                  </div>
+                  <div class="video-body">
+                    <h3>CreatorsBridge walkthrough</h3>
+                    <p>PRODUCT DEMO · YOUTUBE</p>
+                  </div>
+                </a>
+                <!-- Talks I learn from: verified links, same card pattern -->
+                <a
+                  class="glass video-card"
+                  href="https://youtu.be/UF8uR6Z6KLc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="video-thumb">
+                    <img
+                      src="https://img.youtube.com/vi/UF8uR6Z6KLc/mqdefault.jpg"
+                      alt="Steve Jobs 2005 Stanford commencement address thumbnail"
+                      loading="lazy"
+                      onerror="this.onerror=null;this.src='https://img.youtube.com/vi/UF8uR6Z6KLc/hqdefault.jpg'"
+                    />
+                    <span class="play-btn"
+                      ><svg><use href="#i-play" /></svg
+                    ></span>
+                  </div>
+                  <div class="video-body">
+                    <h3>Steve Jobs' 2005 Stanford Commencement Address</h3>
+                    <p>FOUNDER · STANFORD COMMENCEMENT</p>
+                  </div>
+                </a>
+                <a
+                  class="glass video-card"
+                  href="https://youtu.be/qp0HIF3SfI4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="video-thumb">
+                    <img
+                      src="https://img.youtube.com/vi/qp0HIF3SfI4/maxresdefault.jpg"
+                      alt="How Great Leaders Inspire Action by Simon Sinek thumbnail"
+                      loading="lazy"
+                      onerror="this.onerror=null;this.src='https://img.youtube.com/vi/qp0HIF3SfI4/hqdefault.jpg'"
+                    />
+                    <span class="play-btn"
+                      ><svg><use href="#i-play" /></svg
+                    ></span>
+                  </div>
+                  <div class="video-body">
+                    <h3>How Great Leaders Inspire Action</h3>
+                    <p>FOUNDER · SIMON SINEK TED</p>
+                  </div>
+                </a>
+                <a
+                  class="glass video-card"
+                  href="https://youtu.be/eIho2S0ZahI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="video-thumb">
+                    <img
+                      src="https://img.youtube.com/vi/eIho2S0ZahI/maxresdefault.jpg"
+                      alt="How to Speak So That People Want to Listen by Julian Treasure thumbnail"
+                      loading="lazy"
+                      onerror="this.onerror=null;this.src='https://img.youtube.com/vi/eIho2S0ZahI/hqdefault.jpg'"
+                    />
+                    <span class="play-btn"
+                      ><svg><use href="#i-play" /></svg
+                    ></span>
+                  </div>
+                  <div class="video-body">
+                    <h3>How to Speak So That People Want to Listen</h3>
+                    <p>PUBLIC SPEAKING · JULIAN TREASURE TED</p>
+                  </div>
+                </a>
+                <a
+                  class="glass video-card"
+                  href="https://youtu.be/Ks-_Mh1QhMc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="video-thumb">
+                    <img
+                      src="https://img.youtube.com/vi/Ks-_Mh1QhMc/maxresdefault.jpg"
+                      alt="Your Body Language May Shape Who You Are by Amy Cuddy thumbnail"
+                      loading="lazy"
+                      onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Ks-_Mh1QhMc/hqdefault.jpg'"
+                    />
+                    <span class="play-btn"
+                      ><svg><use href="#i-play" /></svg
+                    ></span>
+                  </div>
+                  <div class="video-body">
+                    <h3>Your Body Language May Shape Who You Are</h3>
+                    <p>PUBLIC SPEAKING · AMY CUDDY TED</p>
+                  </div>
+                </a>
+                <a
+                  class="glass video-card"
+                  href="https://youtu.be/R1vskiVDwl4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="video-thumb">
+                    <img
+                      src="https://img.youtube.com/vi/R1vskiVDwl4/maxresdefault.jpg"
+                      alt="10 Ways to Have a Better Conversation by Celeste Headlee thumbnail"
+                      loading="lazy"
+                      onerror="this.onerror=null;this.src='https://img.youtube.com/vi/R1vskiVDwl4/hqdefault.jpg'"
+                    />
+                    <span class="play-btn"
+                      ><svg><use href="#i-play" /></svg
+                    ></span>
+                  </div>
+                  <div class="video-body">
+                    <h3>10 Ways to Have a Better Conversation</h3>
+                    <p>PUBLIC SPEAKING · CELESTE HEADLEE TED</p>
+                  </div>
+                </a>
+                </div>
+                <span class="scroll-hint" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="section" aria-label="Contact">
+          <div class="container-main reveal">
+            <div class="contact-grid">
+              <!-- email stays hidden inside this mailto link -->
+              <a
+                class="contact-method"
+                href="mailto:chavanpruthviraj592@gmail.com"
+                aria-label="Send a direct email"
+              >
+                <svg><use href="#i-mail" /></svg>
+                <div class="min-w-0">
+                  <small>EMAIL</small>
+                  <p>Opens your mail app directly</p>
+                </div>
+                <svg class="go"><use href="#i-arrow-ur" /></svg>
+              </a>
+              <a
+                class="contact-method"
+                href="https://wa.me/917499817978"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open WhatsApp chat"
+              >
+                <svg><use href="#i-message" /></svg>
+                <div class="min-w-0">
+                  <small>WHATSAPP</small>
+                  <p>Chat with me directly</p>
+                </div>
+                <svg class="go"><use href="#i-arrow-ur" /></svg>
+              </a>
+              <a
+                class="contact-method"
+                href="https://www.linkedin.com/in/pruthviraj-chavan-294342310/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LinkedIn"
+                title="Open LinkedIn"
+              >
+                <svg><use href="#i-linkedin" /></svg>
+                <div class="min-w-0">
+                  <small>LINKEDIN</small>
+                  <p>Open my LinkedIn profile</p>
+                </div>
+                <svg class="go"><use href="#i-arrow-ur" /></svg>
+              </a>
+              <div class="contact-method">
+                <svg><use href="#i-map-pin" /></svg>
+                <div class="min-w-0">
+                  <small>BASED IN</small>
+                  <p>Pune, Maharashtra, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container-main footer-inner">
+          <p>© <span id="year">2026</span> Pruthviraj Chavan</p>
+          <div class="socials">
+            <a
+              class="portfolio-social"
               href="https://github.com/pruthviraj21-master"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
-                />
-              </svg>
-            </a>
+              ><svg><use href="#i-github" /></svg
+            ></a>
             <a
-              class="social-btn"
+              class="portfolio-social"
               href="https://www.linkedin.com/in/pruthviraj-chavan-294342310/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-                fill="currentColor"
-              >
-                <path
-                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"
-                />
-              </svg>
-            </a>
+              ><svg><use href="#i-linkedin" /></svg
+            ></a>
             <a
-              class="social-btn"
+              class="portfolio-social"
               href="https://www.instagram.com/solofounder_/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <rect width="20" height="20" x="2" y="2" rx="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg>
-            </a>
-            <a
-              class="social-btn"
-              href="https://x.com/Pruthviraj74"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="16"
-                height="16"
-                fill="currentColor"
-              >
-                <path
-                  d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6L18.9 2Zm-1.2 18h1.7L7.4 4h-1.8l12.1 16Z"
-                />
-              </svg>
-            </a>
+              ><svg><use href="#i-instagram" /></svg
+            ></a>
           </div>
+          <p>Built from scratch. No template.</p>
         </div>
-        <div class="avatar-wrap">
-          <div class="avatar-ring">
-            <!-- reused from your WashAtComfort site -->
-            <img src="InstagramProfileImage.png" alt="Pruthviraj Chavan" />
-          </div>
-          <div class="avatar-tag mono">~/pune, india</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= ABOUT ================= -->
-    <section id="about">
-      <div class="wrap reveal">
-        <span class="kicker">ABOUT</span>
-        <h2 style="margin-top: 14px">A bit about how I work</h2>
-        <p
-          style="
-            margin-top: 16px;
-            font-size: 15px;
-            color: var(--ink-soft);
-            max-width: 640px;
-            line-height: 1.7;
-          "
-        >
-          <!-- TODO: replace with your own words — this is a starting draft based on what you've told me -->
-          I'm a final-year MCA student who ended up building products, not just
-          studying them. I taught myself the MERN stack, shipped CreatorsBridge
-          as a real live marketplace, and built WashAtComfort from a problem I
-          lived personally for years of washing cars myself. I care about
-          actually shipping things, documenting the process honestly (bugs
-          included), and figuring out the business side alongside the code.
-        </p>
-        <div class="quick-facts">
-          <div class="card quick-fact">
-            <div class="label">LOCATION</div>
-            <div class="value">Pune, Maharashtra, India</div>
-          </div>
-          <div class="card quick-fact">
-            <div class="label">EDUCATION</div>
-            <div class="value">MCA, Final Year IMCC</div>
-          </div>
-          <div class="card quick-fact">
-            <div class="label">FOCUS</div>
-            <div class="value">Full-stack development + Entrepreneurship</div>
-          </div>
-          <div class="card quick-fact">
-            <div class="label">CURRENTLY BUILDING</div>
-            <div class="value">CreatorsBridge &amp; WashAtComfort</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SKILLS ================= -->
-    <section
-      id="skills"
-      style="
-        background: var(--bg-sunk);
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-      "
-    >
-      <div class="wrap reveal">
-        <span class="kicker">SKILLS</span>
-        <h2 style="margin-top: 14px">Tools I actually build with</h2>
-
-        <div class="skills-group">
-          <div class="label">LANGUAGES</div>
-          <div class="chip-row">
-            <span class="chip">Java</span><span class="chip">Python</span
-            ><span class="chip">JavaScript</span>
-          </div>
-        </div>
-        <div class="skills-group">
-          <div class="label">FRONTEND</div>
-          <div class="chip-row">
-            <span class="chip">React</span><span class="chip">Vite</span
-            ><span class="chip">Tailwind CSS</span
-            ><span class="chip">Framer Motion</span
-            ><span class="chip">HTML / CSS / JS</span>
-          </div>
-        </div>
-        <div class="skills-group">
-          <div class="label">BACKEND</div>
-          <div class="chip-row">
-            <span class="chip">Node.js</span><span class="chip">Express</span
-            ><span class="chip">Spring Boot</span
-            ><span class="chip">JWT Auth</span>
-          </div>
-        </div>
-        <div class="skills-group">
-          <div class="label">DATABASES</div>
-          <div class="chip-row">
-            <span class="chip">MongoDB</span
-            ><span class="chip">PostgreSQL</span>
-          </div>
-        </div>
-        <div class="skills-group">
-          <div class="label">TOOLS &amp; PLATFORMS</div>
-          <div class="chip-row">
-            <span class="chip">Git / GitHub</span
-            ><span class="chip">Vercel</span><span class="chip">Render</span
-            ><span class="chip">Google Apps Script</span
-            ><span class="chip">Cloudinary</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= EXPERIENCE ================= -->
-    <section id="experience">
-      <div class="wrap reveal">
-        <span class="kicker">EXPERIENCE</span>
-        <h2 style="margin-top: 14px">Where I've applied this</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h4>AI Automation Intern, ZuiGO Private Limited</h4>
-            <div class="meta">6-month internship</div>
-            <p>
-              Built a Retrieval-Augmented Generation (RAG) chatbot using
-              Node.js, Express, and the Gemini API, including a PDF ingestion
-              pipeline and cosine-similarity search. Also ran product-thinking
-              work: PRDs, user stories, and sprint tracking in Jira, using my
-              own live projects as real deliverables instead of hypothetical
-              ones.
-            </p>
-          </div>
-          <div class="timeline-item">
-            <h4>Founder &amp; Developer, CreatorsBridge</h4>
-            <div class="meta">Ongoing</div>
-            <p>
-              Designed, built, and deployed a full MERN marketplace connecting
-              local content creators with local businesses, end to end, from
-              database schema to production deployment on Vercel and Render.
-            </p>
-          </div>
-          <div class="timeline-item">
-            <h4>Founder &amp; Developer, WashAtComfort</h4>
-            <div class="meta">Ongoing</div>
-            <p>
-              Built a doorstep car-wash booking platform from a problem I'd
-              lived myself, after years of washing cars to cover expenses.
-              Handled the whole stack myself: frontend, Google Sheets as a
-              lightweight backend, Cloudinary for photo uploads, and
-              WhatsApp-based customer communication.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="cta-band reveal">
-      <div class="wrap">
-        <h2>Want to see the actual work?</h2>
-        <p>Two live products, built and shipped solo.</p>
-        <a href="projects.html" class="btn btn-primary">View Projects</a>
-      </div>
+      </footer>
     </div>
 
-    <footer>
-      © <span data-year></span> Pruthviraj Chavan. Built from scratch, no
-      template.
-    </footer>
+    <div class="intro" aria-hidden="true">
+      <div class="intro-mark">
+        <span class="intro-line"></span>
+        <span class="intro-logo">PDC</span>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

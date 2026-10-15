@@ -1,0 +1,5 @@
+# editor tooling — not part of the published site
+.vscode/
+
+# local scratch assets not referenced by the site
+creatorsbridge-demo-thumb.jpg
