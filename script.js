@@ -31,22 +31,24 @@ window.addEventListener('scroll', onScroll, { passive: true });
 
 /* ---------- scroll-spy: active nav link ---------- */
 const sections = document.querySelectorAll('section[id]');
-const spy = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const id = entry.target.id;
-      document.querySelectorAll('.nav-link').forEach((link) => {
-        const active = link.getAttribute('href') === `#${id}`;
-        link.classList.toggle('active', active);
-        if (active) link.setAttribute('aria-current', 'location');
-        else link.removeAttribute('aria-current');
+if ('IntersectionObserver' in window) {
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        document.querySelectorAll('.nav-link').forEach((link) => {
+          const active = link.getAttribute('href') === `#${id}`;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
       });
-    });
-  },
-  { rootMargin: '-20% 0px -60% 0px' }
-);
-sections.forEach((s) => spy.observe(s));
+    },
+    { rootMargin: '-20% 0px -60% 0px' }
+  );
+  sections.forEach((s) => spy.observe(s));
+}
 
 /* ---------- reveal on scroll ---------- */
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -296,6 +298,14 @@ if (!reducedMotion) {
       card.removeAttribute('data-cursor');
       canvas.classList.add('fading');
       window.setTimeout(() => canvas.remove(), 500);
+      /* phones get a tiny tick when the reveal lands */
+      if (window.navigator.vibrate && window.matchMedia('(pointer: coarse)').matches) {
+        try {
+          window.navigator.vibrate(18);
+        } catch (err) {
+          /* haptics unavailable */
+        }
+      }
     }
 
     /* clicks only work once the card is fully revealed (and not from the scratch gesture itself) */
@@ -573,3 +583,65 @@ if (journeyChat) {
 /* ---------- footer year ---------- */
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+/* ---------- phone experience: tap ripples, portrait parallax, details toggles ---------- */
+const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+
+/* project cards collapse behind a "View details" tap on phones */
+document.querySelectorAll('.details-toggle').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.project-card');
+    if (!card) return;
+    const open = card.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+    const label = btn.querySelector('span');
+    if (label) label.textContent = open ? 'Hide details' : 'View details';
+  });
+});
+
+if (coarsePointer && !reducedMotion) {
+  /* a soft gold ripple blooms wherever the thumb lands */
+  document.addEventListener(
+    'pointerdown',
+    (e) => {
+      const host = e.target.closest(
+        '.portfolio-button, .contact-method, .chip, .details-toggle'
+      );
+      if (!host || host.disabled) return;
+      const rect = host.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.width = size + 'px';
+      ripple.style.height = size + 'px';
+      ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
+      ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
+      host.appendChild(ripple);
+      window.setTimeout(() => ripple.remove(), 640);
+    },
+    { passive: true }
+  );
+
+  /* the portrait drifts gently upward as the hero scrolls away */
+  const portraitFrame = document.querySelector('.portrait-frame');
+  const hero = document.querySelector('.hero');
+  if (portraitFrame && hero) {
+    let queued = false;
+    const drawParallax = () => {
+      queued = false;
+      const span = hero.offsetHeight || 1;
+      const p = Math.min(Math.max(window.scrollY / span, 0), 1);
+      portraitFrame.style.transform =
+        'rotate(2deg) translateY(' + (-p * 26).toFixed(1) + 'px)';
+    };
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(drawParallax);
+      },
+      { passive: true }
+    );
+  }
+}

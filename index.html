@@ -14,7 +14,7 @@
     />
     <meta
       property="og:description"
-      content="Student founder. Full-stack developer. Two live products, built solo. See my work and get in touch."
+      content="Student founder. Full-stack developer. Live projects, built solo. See my work and get in touch."
     />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -29,6 +29,7 @@
       /* intro ceremony: plays once per session, skipped for reduced motion */
       (function () {
         var d = document.documentElement;
+        d.classList.add('js');
         var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         var seen = false;
         try { seen = sessionStorage.getItem('pdc-intro') === '1'; } catch (e) {}
@@ -531,30 +532,28 @@
             </div>
             <div class="portrait-scene">
               <div class="portrait-frame">
-                <img
-                  src="InstagramProfileImage.png"
-                  alt="Pruthviraj Chavan"
-                  width="768"
-                  height="768"
-                  fetchpriority="high"
-                />
-                <span class="portrait-label">DEVELOPER. FOUNDER. BUILDER.</span>
+                <div class="portrait-photo">
+                  <img
+                    src="InstagramProfileImage.png"
+                    alt="Pruthviraj Chavan"
+                    width="768"
+                    height="768"
+                    fetchpriority="high"
+                  />
+                </div>
               </div>
+              <span class="portrait-label">DEVELOPER. FOUNDER. BUILDER.</span>
               <div class="floating-card stat-products">
                 <svg><use href="#i-rocket" /></svg>
-                <div>2 live products<small>Ideas → shipped.</small></div>
+                <div>Live projects</div>
               </div>
               <div class="floating-card stat-mern">
                 <svg><use href="#i-code" /></svg>
-                <div>MERN stack<small>Full-stack, end to end.</small></div>
+                <div>Full stack</div>
               </div>
               <div class="floating-card stat-building">
                 <svg><use href="#i-terminal" /></svg>
-                <div>
-                  Building in public<small
-                    >The process. Not just the polish.</small
-                  >
-                </div>
+                <div>Building in public</div>
               </div>
             </div>
           </div>
@@ -583,27 +582,27 @@
             <div class="stats-grid">
               <div class="glass stat-box">
                 <div class="stat-number">
-                  <span class="count" data-value="8">8</span><span>weeks</span>
+                  <span class="count" data-value="10">10</span><span>+</span>
                 </div>
-                <p>to ship CreatorsBridge</p>
-              </div>
-              <div class="glass stat-box">
-                <div class="stat-number">
-                  <span class="count" data-value="2">2</span><span></span>
-                </div>
-                <p>Live products</p>
-              </div>
-              <div class="glass stat-box">
-                <div class="stat-number">
-                  <span class="count" data-value="4">4</span><span></span>
-                </div>
-                <p>Industry certifications</p>
+                <p>Live projects</p>
               </div>
               <div class="glass stat-box">
                 <div class="stat-number">
                   <span class="count" data-value="100">100</span><span>%</span>
                 </div>
                 <p>Solo built</p>
+              </div>
+              <div class="glass stat-box">
+                <div class="stat-number">
+                  <span class="count" data-value="5">5</span><span></span>
+                </div>
+                <p>Team projects</p>
+              </div>
+              <div class="glass stat-box">
+                <div class="stat-number">
+                  <span class="count" data-value="9">9</span><span>+</span>
+                </div>
+                <p>Certificates earned</p>
               </div>
             </div>
           </div>
@@ -668,6 +667,16 @@
                       ><span class="live-dot"></span>Live</span
                     >
                   </div>
+                  <button
+                    class="details-toggle"
+                    type="button"
+                    aria-expanded="false"
+                  >
+                    <span>View details</span
+                    ><svg><use href="#i-arrow-d" /></svg>
+                  </button>
+                  <div class="project-details">
+                    <div class="project-details-inner">
                   <p class="project-description">
                     A marketplace connecting local creators with local
                     businesses for paid collaborations.
@@ -719,6 +728,8 @@
                         <use href="#i-arrow-ur" /></svg
                     ></a>
                   </div>
+                    </div>
+                  </div>
                 </div>
               </article>
               <!-- WashAtComfort -->
@@ -765,6 +776,16 @@
                       ><span class="live-dot"></span>Live</span
                     >
                   </div>
+                  <button
+                    class="details-toggle"
+                    type="button"
+                    aria-expanded="false"
+                  >
+                    <span>View details</span
+                    ><svg><use href="#i-arrow-d" /></svg>
+                  </button>
+                  <div class="project-details">
+                    <div class="project-details-inner">
                   <p class="project-description">
                     A doorstep car-wash booking platform built from a problem I
                     lived personally.
@@ -806,6 +827,8 @@
                       ><svg><use href="#i-github" /></svg>GitHub<svg>
                         <use href="#i-arrow-ur" /></svg
                     ></a>
+                  </div>
+                    </div>
                   </div>
                 </div>
               </article>
