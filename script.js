@@ -1,9 +1,5 @@
-/* ============================================================
-   Pruthviraj Chavan — Portfolio scripts
-   Plain JS. No dependencies. Works on GitHub Pages as-is.
-   ============================================================ */
 
-/* ---------- mobile menu ---------- */
+
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const menuIcon = document.getElementById('menuIcon');
@@ -23,13 +19,11 @@ if (menuToggle && navLinks) {
   );
 }
 
-/* ---------- header scrolled state ---------- */
 const siteNav = document.getElementById('siteNav');
 const onScroll = () => siteNav && siteNav.classList.toggle('scrolled', window.scrollY > 20);
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
-/* ---------- scroll-spy: active nav link ---------- */
 const sections = document.querySelectorAll('section[id]');
 if ('IntersectionObserver' in window) {
   const spy = new IntersectionObserver(
@@ -50,7 +44,6 @@ if ('IntersectionObserver' in window) {
   sections.forEach((s) => spy.observe(s));
 }
 
-/* ---------- reveal on scroll ---------- */
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealEls = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window && !reducedMotion) {
@@ -70,7 +63,6 @@ if ('IntersectionObserver' in window && !reducedMotion) {
   revealEls.forEach((el) => el.classList.add('revealed'));
 }
 
-/* ---------- section divider lines draw in on scroll ---------- */
 const sectionEls = document.querySelectorAll('.section');
 if ('IntersectionObserver' in window && !reducedMotion) {
   const lineObs = new IntersectionObserver(
@@ -89,7 +81,6 @@ if ('IntersectionObserver' in window && !reducedMotion) {
   sectionEls.forEach((s) => s.classList.add('line-in'));
 }
 
-/* ---------- videos: cascade reveal + scroll hint ---------- */
 const videosLayout = document.querySelector('.videos-layout');
 const videoScroll = document.querySelector('.video-scroll');
 if (videosLayout) {
@@ -118,7 +109,6 @@ if (videoScroll) {
   );
 }
 
-/* ---------- cycling word in hero ---------- */
 const cyclingWord = document.getElementById('cyclingWord');
 if (cyclingWord && !reducedMotion) {
   const words = ['build', 'ship', 'deploy', 'document'];
@@ -129,7 +119,6 @@ if (cyclingWord && !reducedMotion) {
   }, 2500);
 }
 
-/* ---------- count-up stats (never displays a zero) ---------- */
 document.querySelectorAll('.count').forEach((el) => {
   const target = Number(el.dataset.value || 0);
   if (reducedMotion || !('IntersectionObserver' in window)) {
@@ -155,7 +144,6 @@ document.querySelectorAll('.count').forEach((el) => {
   obs.observe(el);
 });
 
-/* ---------- custom cursor (desktop only) ---------- */
 const cursorDot = document.getElementById('cursorDot');
 const cursorRing = document.getElementById('cursorRing');
 if (cursorDot && cursorRing && !reducedMotion && window.matchMedia('(pointer: fine)').matches) {
@@ -179,7 +167,6 @@ if (cursorDot && cursorRing && !reducedMotion && window.matchMedia('(pointer: fi
   requestAnimationFrame(tick);
 }
 
-/* ---------- contact: scratch-to-reveal cards (G Pay coupon style) ---------- */
 if (!reducedMotion) {
   document.querySelectorAll('.contact-method').forEach((card) => {
     const canvas = document.createElement('canvas');
@@ -298,17 +285,16 @@ if (!reducedMotion) {
       card.removeAttribute('data-cursor');
       canvas.classList.add('fading');
       window.setTimeout(() => canvas.remove(), 500);
-      /* phones get a tiny tick when the reveal lands */
+
       if (window.navigator.vibrate && window.matchMedia('(pointer: coarse)').matches) {
         try {
           window.navigator.vibrate(18);
         } catch (err) {
-          /* haptics unavailable */
+
         }
       }
     }
 
-    /* clicks only work once the card is fully revealed (and not from the scratch gesture itself) */
     card.addEventListener(
       'click',
       (e) => {
@@ -352,20 +338,17 @@ if (!reducedMotion) {
     canvas.addEventListener('pointercancel', () => {
       drawing = false;
     });
-    /* keyboard users: focusing the card reveals it instantly */
+
     card.addEventListener('focusin', reveal);
   });
 }
 
-/* ---------- signature system: spotlight, progress, magnetic, tilt, labels ---------- */
 const finePointer = window.matchMedia('(pointer: fine)').matches;
 
-/* intro ceremony cleanup (veil has lifted by then) */
 if (document.documentElement.classList.contains('intro-play')) {
   window.setTimeout(() => document.documentElement.classList.remove('intro-play'), 1600);
 }
 
-/* gold scroll-progress line */
 const progressBar = document.querySelector('.progress-bar');
 if (progressBar && !reducedMotion) {
   const setProgress = () => {
@@ -378,7 +361,7 @@ if (progressBar && !reducedMotion) {
 }
 
 if (finePointer && !reducedMotion) {
-  /* golden spotlight glides after the cursor */
+
   const spotlight = document.querySelector('.spotlight');
   if (spotlight) {
     let sx = window.innerWidth * 0.72;
@@ -402,7 +385,6 @@ if (finePointer && !reducedMotion) {
     })();
   }
 
-  /* magnetic pull on the primary actions */
   document.querySelectorAll('.hero .portfolio-button, .resume-button, .socials a').forEach((el) => {
     el.classList.add('magnetic');
     el.addEventListener(
@@ -420,7 +402,6 @@ if (finePointer && !reducedMotion) {
     });
   });
 
-  /* tilt with travelling glare on project and certificate cards */
   document.querySelectorAll('.project-card, .cert-card').forEach((card) => {
     card.classList.add('tilt');
     card.addEventListener(
@@ -445,7 +426,6 @@ if (finePointer && !reducedMotion) {
     });
   });
 
-  /* contextual cursor labels: VIEW on work, SCRATCH on contact */
   const cursorLabel = document.querySelector('.cursor-label');
   if (cursorLabel) {
     document.querySelectorAll('.project-card, .video-card').forEach((el) => {
@@ -472,7 +452,6 @@ if (finePointer && !reducedMotion) {
   }
 }
 
-/* ---------- journey: the portfolio answers like the RAG chatbot he built ---------- */
 const journeyChat = document.querySelector('.journey-chat');
 if (journeyChat) {
   const thread = journeyChat.querySelector('.chat-thread');
@@ -580,14 +559,11 @@ if (journeyChat) {
   }
 }
 
-/* ---------- footer year ---------- */
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-/* ---------- phone experience: tap ripples, portrait parallax, details toggles ---------- */
 const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
 
-/* project cards collapse behind a "View details" tap on phones */
 document.querySelectorAll('.details-toggle').forEach((btn) => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.project-card');
@@ -600,7 +576,7 @@ document.querySelectorAll('.details-toggle').forEach((btn) => {
 });
 
 if (coarsePointer && !reducedMotion) {
-  /* a soft gold ripple blooms wherever the thumb lands */
+
   document.addEventListener(
     'pointerdown',
     (e) => {
@@ -622,7 +598,6 @@ if (coarsePointer && !reducedMotion) {
     { passive: true }
   );
 
-  /* the portrait drifts gently upward as the hero scrolls away */
   const portraitFrame = document.querySelector('.portrait-frame');
   const hero = document.querySelector('.hero');
   if (portraitFrame && hero) {

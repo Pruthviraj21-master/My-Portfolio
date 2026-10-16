@@ -40,13 +40,20 @@
       })();
     </script>
     <link rel="stylesheet" href="style.css" />
-  </head>
+  <!-- GA4: replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
   <body>
     <div class="spotlight" aria-hidden="true"></div>
     <div class="progress-bar" aria-hidden="true"></div>
     <div class="cursor-label" aria-hidden="true"></div>
-    <!-- reusable SVG icons -->
-    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+        <svg width="0" height="0" style="position: absolute" aria-hidden="true">
       <defs>
         <symbol
           id="i-arrow-ur"
@@ -109,18 +116,7 @@
           <line x1="4" x2="20" y1="12" y2="12" />
           <line x1="4" x2="20" y1="18" y2="18" />
         </symbol>
-        <symbol
-          id="i-x"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        >
-          <path d="M18 6 6 18" />
-          <path d="m6 6 12 12" />
-        </symbol>
-        <symbol
+                <symbol
           id="i-map-pin"
           viewBox="0 0 24 24"
           fill="none"
@@ -338,21 +334,7 @@
         >
           <polygon points="6 3 20 12 6 21 6 3" />
         </symbol>
-        <symbol
-          id="i-send"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path
-            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
-          />
-          <path d="m21.854 2.147-10.94 10.939" />
-        </symbol>
-        <symbol
+                <symbol
           id="i-braces"
           viewBox="0 0 24 24"
           fill="none"
@@ -415,8 +397,7 @@
       <div class="cursor-dot" id="cursorDot"></div>
       <div class="cursor-ring" id="cursorRing"></div>
 
-      <!-- ================= NAV ================= -->
-      <header class="site-nav" id="siteNav">
+            <header class="site-nav" id="siteNav">
         <div class="container-main nav-inner">
           <a href="#home" class="brand" aria-label="Pruthviraj Chavan home">
             <div class="monogram">P<span>C</span></div>
@@ -452,8 +433,7 @@
       </header>
 
       <main>
-        <!-- ================= HERO ================= -->
-        <section id="home" class="hero">
+                <section id="home" class="hero">
           <div class="container-main hero-grid">
             <div class="hero-copy">
               <div class="available">
@@ -534,7 +514,7 @@
               <div class="portrait-frame">
                 <div class="portrait-photo">
                   <img
-                    src="InstagramProfileImage.png"
+                    src="hero.webp"
                     alt="Pruthviraj Chavan"
                     width="768"
                     height="768"
@@ -562,8 +542,7 @@
           >
         </section>
 
-        <!-- ================= ABOUT ================= -->
-        <section id="about" class="section about-section">
+                <section id="about" class="section about-section">
           <div class="container-main about-grid reveal">
             <div>
               <p class="section-eyebrow">A LITTLE ABOUT ME</p>
@@ -608,8 +587,7 @@
           </div>
         </section>
 
-        <!-- ================= PROJECTS ================= -->
-        <section id="projects" class="section">
+                <section id="projects" class="section">
           <div class="container-main reveal">
             <div class="section-heading">
               <div class="min-w-0">
@@ -619,8 +597,7 @@
               <p>Real problems. Real products. Out in the world.</p>
             </div>
             <div class="projects-grid">
-              <!-- CreatorsBridge -->
-              <article class="glass project-card">
+                            <article class="glass project-card">
                 <div
                   class="project-preview creators"
                   aria-label="CreatorsBridge project illustration"
@@ -732,8 +709,7 @@
                   </div>
                 </div>
               </article>
-              <!-- WashAtComfort -->
-              <article class="glass project-card">
+                            <article class="glass project-card">
                 <div
                   class="project-preview wash"
                   aria-label="WashAtComfort project illustration"
@@ -855,8 +831,7 @@
           </div>
         </section>
 
-        <!-- ================= SKILLS ================= -->
-        <section id="skills" class="section">
+                <section id="skills" class="section">
           <div class="container-main reveal">
             <div class="section-heading">
               <div class="min-w-0">
@@ -927,8 +902,7 @@
           </div>
         </section>
 
-        <!-- ================= EXPERIENCE ================= -->
-        <section id="experience" class="section">
+                <section id="experience" class="section">
           <div class="container-main reveal">
             <div class="section-heading">
               <div class="min-w-0">
@@ -1055,8 +1029,7 @@
           </div>
         </section>
 
-        <!-- ================= EDUCATION ================= -->
-        <section id="education" class="section">
+                <section id="education" class="section">
           <div class="container-main reveal">
             <div class="section-heading">
               <div class="min-w-0">
@@ -1091,8 +1064,7 @@
           </div>
         </section>
 
-        <!-- ================= CERTIFICATES ================= -->
-        <section id="certificates" class="section">
+                <section id="certificates" class="section">
           <div class="container-main reveal">
             <div class="section-heading">
               <div class="min-w-0">
@@ -1104,13 +1076,13 @@
             <div class="cert-grid">
               <a
                 class="glass cert-card"
-                href="angular-infosys.png"
+                href="cert-angular.webp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="cert-thumb">
                   <img
-                    src="angular-infosys.png"
+                    src="cert-angular.webp"
                     alt="Angular certificate from Infosys Springboard"
                     loading="lazy"
                   />
@@ -1129,13 +1101,13 @@
               </a>
               <a
                 class="glass cert-card"
-                href="playwright-testautomationu.png"
+                href="cert-playwright.webp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="cert-thumb">
                   <img
-                    src="playwright-testautomationu.png"
+                    src="cert-playwright.webp"
                     alt="Introduction to Playwright certificate from Test Automation University"
                     loading="lazy"
                   />
@@ -1154,13 +1126,13 @@
               </a>
               <a
                 class="glass cert-card"
-                href="aws-certification.png"
+                href="cert-aws.webp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="cert-thumb">
                   <img
-                    src="aws-certification.png"
+                    src="cert-aws.webp"
                     alt="AWS Training and Certification from Amazon Web Services"
                     loading="lazy"
                   />
@@ -1198,8 +1170,7 @@
           </div>
         </section>
 
-        <!-- ================= VIDEOS ================= -->
-        <section id="videos" class="section">
+                <section id="videos" class="section">
           <div class="container-main reveal">
             <div class="videos-layout">
               <div class="videos-intro">
@@ -1235,8 +1206,7 @@
                     <p>PRODUCT DEMO · YOUTUBE</p>
                   </div>
                 </a>
-                <!-- Talks I learn from: verified links, same card pattern -->
-                <a
+                                <a
                   class="glass video-card"
                   href="https://youtu.be/UF8uR6Z6KLc"
                   target="_blank"
@@ -1357,12 +1327,10 @@
           </div>
         </section>
 
-        <!-- ================= CONTACT ================= -->
-        <section id="contact" class="section" aria-label="Contact">
+                <section id="contact" class="section" aria-label="Contact">
           <div class="container-main reveal">
             <div class="contact-grid">
-              <!-- email stays hidden inside this mailto link -->
-              <a
+                            <a
                 class="contact-method"
                 href="mailto:chavanpruthviraj592@gmail.com"
                 aria-label="Send a direct email"
